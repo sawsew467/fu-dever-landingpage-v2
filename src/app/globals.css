@@ -2,19 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
+
+@layer base {
+ 
+}
+
+.borderStrock {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%230098FFFF' stroke-width='4' stroke-dasharray='16.3' stroke-dashoffset='6' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+:root, html, body {
+  /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255; */
+  scroll-behavior: smooth;
+}
+
+/* ::-webkit-scrollbar {
+  display: none;
+} */
+
+
+.stroke-text {
+  color: white;
+  text-shadow: 1px 1px 0 #0098ff, -1px -1px 0 #0098ff, 1px -1px 0 #0098ff,
+    -1px 1px 0 #0098ff, 1px 1px 0 #0098ff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+    /* --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0; */
   }
 }
+
+
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -24,10 +47,15 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
   }
-}
+
+.stroke-text
+ {
+     color: white;
+     text-shadow:
+         1px 1px 0 #0098FF,
+       -1px -1px 0 #0098FF,  
+        1px -1px 0 #0098FF,
+        -1px 1px 0 #0098FF,
+         1px 1px 0 #0098FF;
+  }
