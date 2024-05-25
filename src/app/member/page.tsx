@@ -49,4 +49,4 @@ async function Member() {
   return <MainMember data={user ?? []} />;
 }
 export default Member;
-export const revalidate = 60;
+export const revalidate = 60; 

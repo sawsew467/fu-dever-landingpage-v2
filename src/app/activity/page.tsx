@@ -46,7 +46,8 @@ const getAlbum = async () => {
 };
 async function Activity() {
   const data: any = await getActivity();
-  return <MainActivy data={data?.data?.data} />;
+  const albums: any = await getAlbum();
+  return <MainActivy data={data?.data?.data} albums={albums?.data?.data} />;
 }
 
 export default Activity;

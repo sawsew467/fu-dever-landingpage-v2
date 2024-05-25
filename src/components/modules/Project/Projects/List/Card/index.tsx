@@ -3,6 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import ViewMoreButton from "../../../ViewMoreButton";
 import Link from "next/link";
 import moment from "moment";
+import "moment/locale/vi";
 
 function Card({
   _id,
