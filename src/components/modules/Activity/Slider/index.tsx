@@ -15,11 +15,11 @@ function Slider({ images }: any) {
         <div className="w-full max-w-[1280px]">
           <div className="flex justify-center">
             <div className="w-full  ">
-              <ImageGallery
+              {/* <ImageGallery
                 lazyLoad={true}
                 items={newImages}
                 autoPlay
-              ></ImageGallery>
+              ></ImageGallery> */}
             </div>
           </div>
         </div>
