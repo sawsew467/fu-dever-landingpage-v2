@@ -2,7 +2,7 @@ import { projectEndpoint } from "@/src/services/endpoint";
 import axios from "axios";
 
 import MainProject from "@components/modules/Post/Main";
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 const getDetailProject = async (id: string) => {
   let config = {
     method: "get",
@@ -47,7 +47,7 @@ export default async function Page({
 }) {
   const data: any = await getDetailProject(id);
   if (!data?.data?.data) {
-    redirect("/404");
+    notFound();
   }
   return <MainProject project={data?.data?.data ?? {}} />;
 }

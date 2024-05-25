@@ -24,7 +24,6 @@ const getUser = async () => {
     method: "get",
     maxBodyLength: Infinity,
     url: userEndpoint.GET_ALL_USERS,
-    
   };
 
   try {
@@ -46,6 +45,9 @@ async function Member() {
     (user: any) => !user?.isAdmin
   );
   const user = { adminData, excellentData, memberData };
+  console.log("🚀 ~ Member ~ memberData:", memberData);
+  console.log("🚀 ~ Member ~ excellentData:", excellentData);
+  console.log("🚀 ~ Member ~ adminData:", adminData);
   return <MainMember data={user ?? []} />;
 }
 export default Member;

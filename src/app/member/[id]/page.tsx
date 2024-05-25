@@ -2,7 +2,7 @@ import React from "react";
 import MainMemberDetail from "@/src/components/modules/MemberDetail/Detail";
 import axios from "axios";
 import { userEndpoint } from "@/src/services/endpoint";
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
 const fetchUser = async (id: string) => {
   let config = {
@@ -45,7 +45,7 @@ const Member = async ({ params: { id } }: { params: { id: string } }) => {
   const user: any = await fetchUser(id);
 
   if (!user?.data?.data) {
-    redirect("/404");
+    notFound();
   }
   return <MainMemberDetail user={user?.data?.data ?? {}} />;
 };
