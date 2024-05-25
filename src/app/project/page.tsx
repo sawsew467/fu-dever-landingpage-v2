@@ -7,7 +7,6 @@ const getAllProject = async () => {
     method: "get",
     maxBodyLength: Infinity,
     url: projectEndpoint.GET_ALL_PROJECT,
-   
   };
 
   try {
@@ -35,3 +34,4 @@ export default async function Project() {
   const data: any = await getAllProject();
   return <MainProject data={data?.data?.data ?? []} />;
 }
+export const revalidate = 60;
