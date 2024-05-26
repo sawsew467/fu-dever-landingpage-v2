@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-
 import SectionTittle from "@components/core/common/SectionTitle";
 import Sekeleton from "@/src/components/core/common/Sekeleton";
 const parent: any = {
@@ -57,13 +56,13 @@ const ListLeaderMember = ({ data = initialData }: { data: any }) => {
                 key={user?._id}
                 className="xl:w-[calc((100%-40px*3)/4)] shadow-2xl lg:rounded-[20px_0] md:rounded-[15px_0] sm:rounded-[8px_0] overflow-hidden md:w-[calc((100%-35px*3)/4)]  xl:aspect-[29/40] lg:aspect-[7/10] md:aspect-[146/204]  sm:aspect-[93/123] sm:w-[calc((100%-20px*1)/2)]  cursor-pointer  relative"
               >
-                <Link href={`member/${user?._id}`}>
+                <Link href={`member/${user?.nickname ?? user?._id}`}>
                   <Image
                     loading="lazy"
                     width={290}
                     height={400}
                     className="xl:aspect-[29/40] lg:aspect-[7/10] md:aspect-[146/204]  sm:aspect-[93/123] pointer-events-none object-cover lg:rounded-tl-[20px] lg:rounded-br-[20px] md:rounded-tl-[15px] md:rounded-br-[15px] sm:rounded-tl-[8px] sm:rounded-br-[8px] w-[100%] h-[100%] "
-                    alt={user?.nickname}
+                    alt={`${user?.firstname} ${user?.lastname} là một lãnh đạo của dever`}
                     src={user?.avatar}
                   ></Image>
                   <div className="h-[auto] absolute bottom-0 w-[100%]">

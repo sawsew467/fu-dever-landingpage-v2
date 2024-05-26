@@ -66,7 +66,7 @@ function Introduction() {
 
   const data = [
     {
-      number: 100,
+      number: 50,
       tittle: "Thành viên",
       speed: 30,
     },

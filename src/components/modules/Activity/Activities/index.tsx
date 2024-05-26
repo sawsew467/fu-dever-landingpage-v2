@@ -3,9 +3,10 @@ import React from "react";
 import workshop from "@images/pages/activity/activities/workshop.jpg";
 import training from "@images/pages/activity/activities/training.jpg";
 import contest from "@images/pages/activity/activities/contest.jpg";
+
 import SectionTitle from "@components/core/common/SectionTitle";
-import Slider from "@components/modules/Activity/Slider";
 import Album from "../Album";
+import Slider from "../Slider";
 
 function Activities({ data, albums }: any) {
   const academicActivities = [
@@ -64,6 +65,7 @@ function Activities({ data, albums }: any) {
             </div>
           </div>
         </div>
+        <Slider images={data?.images} />
       </section>
       <Album albums={albums} />
     </>

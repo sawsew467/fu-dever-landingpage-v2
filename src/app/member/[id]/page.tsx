@@ -4,11 +4,14 @@ import axios from "axios";
 import { userEndpoint } from "@/src/services/endpoint";
 import { notFound } from "next/navigation";
 
-const fetchUser = async (id: string) => {
+const fetchUserByNickname = async (nickname: string) => {
   let config = {
     method: "get",
     maxBodyLength: Infinity,
-    url: userEndpoint.GET_USER_DETAIL_BY_ID.replace("{id}", id),
+    url: userEndpoint.GET_USER_DETAIL_BY_NICKNAME.replace(
+      "{nickname}",
+      nickname
+    ),
   };
 
   try {
@@ -24,7 +27,7 @@ export async function generateMetadata({
 }: {
   params: { id: string };
 }) {
-  const data: any = await fetchUser(id);
+  const data: any = await fetchUserByNickname(id);
   const user = data?.data?.data;
   return {
     title: `FU-DEVER | ${user?.firstname} ${user?.lastname}`,
@@ -42,8 +45,7 @@ export async function generateMetadata({
 }
 
 const Member = async ({ params: { id } }: { params: { id: string } }) => {
-  const user: any = await fetchUser(id);
-
+  const user: any = await fetchUserByNickname(id);
   if (!user?.data?.data) {
     notFound();
   }

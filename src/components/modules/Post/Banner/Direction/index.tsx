@@ -8,7 +8,7 @@ function Direction({ currenPage }: any) {
     <>
       <div className="text-[14px] font-[400] leading-normal flex flex-row  align-center opacity-70 ">
         <Link href={`/`}>
-          <div>Trang chủ</div>
+          <div className="hover:text-primary">Trang chủ</div>
         </Link>
         <Image
           loading="lazy"
@@ -17,7 +17,7 @@ function Direction({ currenPage }: any) {
           alt="right arrow"
         ></Image>
         <Link href={`/project`}>
-          <div>Dự án</div>
+          <div className="hover:text-primary">Dự án</div>
         </Link>
         <Image
           loading="lazy"

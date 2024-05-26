@@ -19,11 +19,39 @@ export const metadata = {
   },
 };
 
+const getLeader = async () => {
+  let config = {
+    method: "get",
+    maxBodyLength: Infinity,
+    url: `${userEndpoint.GET_ALL_USERS}?filter={"isLeader":  true}`,
+  };
+
+  try {
+    const response = await axios.request(config);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+const getExcellent = async () => {
+  let config = {
+    method: "get",
+    maxBodyLength: Infinity,
+    url: `${userEndpoint.GET_ALL_USERS}?filter={"isExcellent":  true}`,
+  };
+
+  try {
+    const response = await axios.request(config);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
 const getUser = async () => {
   let config = {
     method: "get",
     maxBodyLength: Infinity,
-    url: userEndpoint.GET_ALL_USERS,
+    url: `${userEndpoint.GET_ALL_USERS}?page=1&limit=8&filter={"isLeader":  false}`,
   };
 
   try {
@@ -34,19 +62,16 @@ const getUser = async () => {
   }
 };
 async function Member() {
-  const data: any = await getUser();
-  const adminData = data?.data?.data?.users?.filter(
-    (user: any) => user?.isAdmin
+  const leaderData: any = await getLeader();
+  const excellentData: any = await getExcellent();
+  const memberData: any = await getUser();
+  return (
+    <MainMember
+      leaderData={leaderData?.data?.data?.users ?? []}
+      excellentData={excellentData?.data?.data?.users ?? []}
+      memberData={memberData?.data?.data?.users ?? []}
+    />
   );
-  const excellentData = data?.data?.data?.users?.filter(
-    (user: any) => user?.isExcellent
-  );
-  const memberData = data?.data?.data?.users?.filter(
-    (user: any) => !user?.isAdmin
-  );
-  const user = { adminData, excellentData, memberData };
-
-  return <MainMember data={user ?? []} />;
 }
 export default Member;
-export const revalidate = 60; 
+export const revalidate = 60;

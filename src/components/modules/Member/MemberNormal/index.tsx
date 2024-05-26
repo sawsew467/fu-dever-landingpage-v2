@@ -1,11 +1,14 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 import SectionTittle from "@components/core/common/SectionTitle";
-import Sekeleton from "@/src/components/core/common/Sekeleton";
+import { useInView } from "framer-motion";
+import { userEndpoint } from "@/src/services/endpoint";
+import axios from "axios";
+import Loading from "@components/modules/Member/Loading";
 const parent: any = {
   show: {
     transition: {
@@ -33,7 +36,35 @@ const child: any = {
 
 const initialData = Array(10).fill(null);
 
-const ListMember = ({ data = initialData }: { data: any }) => {
+const ListMember = ({ member = initialData }: { member: any }) => {
+  const ref = useRef(null);
+  const inView = useInView(ref);
+  const [data, setData] = useState(member);
+  const [page, setPage] = useState<number>(2);
+  const [end, setEnd] = useState(false);
+  const getMoreUser = async (page: number) => {
+    let config = {
+      method: "get",
+      maxBodyLength: Infinity,
+      url: `${userEndpoint.GET_ALL_USERS}?page=${page}&limit=8`,
+    };
+
+    try {
+      const response: any = await axios.request(config);
+      if (response?.data?.currentPage === response?.data?.totalPages)
+        setEnd(true);
+      setData([...data, ...response?.data?.data?.users]);
+    } catch (error) {
+      return error;
+    }
+  };
+
+  useEffect(() => {
+    if (inView) {
+      getMoreUser(page);
+      setPage(page + 1);
+    }
+  }, [inView]);
   return (
     <article className=" md:pb-[60px] sm:pb-[40px]">
       <div className="xl:max-w-[1280px] mx-[auto] px-[auto]">
@@ -46,7 +77,7 @@ const ListMember = ({ data = initialData }: { data: any }) => {
         </div>
         <motion.ul
           initial="hidden"
-          whileInView="show"
+          animate="show"
           variants={parent}
           className=" xl:mt-[28px] w-[100%] md:mt-[40px] sm:mt-[20px] xl:gap-[40px] md:gap-[35px] sm:gap-[20px] flex-wrap flex justify-start"
         >
@@ -56,13 +87,13 @@ const ListMember = ({ data = initialData }: { data: any }) => {
               key={user?._id}
               className="xl:w-[calc((100%-40px*3)/4)] shadow-2xl lg:rounded-[20px_0] md:rounded-[15px_0] sm:rounded-[8px_0] overflow-hidden md:w-[calc((100%-35px*3)/4)]  xl:aspect-[29/40] lg:aspect-[7/10] md:aspect-[146/204]  sm:aspect-[93/123] sm:w-[calc((100%-20px*1)/2)]  cursor-pointer  relative"
             >
-              <Link href={`member/${user?._id}`}>
+              <Link href={`member/${user?.nickname || user?._id}`}>
                 <Image
                   loading="lazy"
                   width={290}
                   height={400}
                   className="xl:aspect-[29/40] lg:aspect-[7/10] md:aspect-[146/204]  sm:aspect-[93/123] pointer-events-none object-cover lg:rounded-tl-[20px] lg:rounded-br-[20px] md:rounded-tl-[15px] md:rounded-br-[15px] sm:rounded-tl-[8px] sm:rounded-br-[8px] w-[100%] h-[100%] "
-                  alt={user?.nickname}
+                  alt={`${user?.firstname} ${user?.lastname} là một thanh viên của dever`}
                   src={user?.avatar}
                 ></Image>
                 <div className="h-[auto] absolute bottom-0 w-[100%]">
@@ -97,6 +128,7 @@ const ListMember = ({ data = initialData }: { data: any }) => {
             </motion.li>
           ))}
         </motion.ul>
+        {!end && <Loading myRef={ref} />}
       </div>
     </article>
   );
