@@ -12,7 +12,7 @@ const decs = [
 ];
 const Profile = ({ user }: { user: any }) => {
   return (
-    <div className=" flex flex-col lg:p-[40px] sm:p-[20px] lg:rounded-[16px] rounded-[8px]  shadow-[0_2px_8px_0_#00000040] xl:gap-[30px] lg:gap-[20px] sm:gap-[20px] w-full">
+    <div className=" flex h-full flex-col lg:p-[40px] sm:p-[20px]  shadow-[0_2px_8px_0_#00000040] xl:gap-[30px] lg:gap-[20px] sm:gap-[20px] w-full">
       <div className="flex lg:gap-[20px] md:gap-[10px] sm:gap-[20px]">
         <div className="rounded-[10px] aspect-[16/22] lg:w-[160px] md:w-[200px] overflow-hidden">
           <Image

@@ -4,8 +4,9 @@ import Logo from "@images/header/logo.svg";
 import MenuLogo from "@images/header/menu.svg";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { AppProgressBar, useRouter } from "next-nprogress-bar";
 import "./style.css";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 const animationHeader: any = {
   down: {
     y: [-60, 0],
@@ -65,6 +66,12 @@ function Header() {
       variants={animationHeader}
       className="left-0 right-0 top-0 fixed z-[100] bg-white/[0.8] backdrop-blur-sm"
     >
+      <AppProgressBar
+        height="4px"
+        color="#0098FF"
+        options={{ showSpinner: false }}
+        shallowRouting
+      />
       <div
         className={`max-w-[1440px] mx-auto h-[56px] lg:h-[64px] xl:h-[64px] flex justify-between items-center px-[20px] md:px-[40px] lg:px-[40px] xl:px-[80px]`}
       >

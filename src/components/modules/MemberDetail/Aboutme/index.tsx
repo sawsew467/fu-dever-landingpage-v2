@@ -3,7 +3,7 @@ import React from "react";
 
 const AboutMe = ({ user }: any) => {
   return (
-    <div className="flex flex-col lg:p-[40px] sm:p-[20px] lg:rounded-[16px] rounded-[8px] shadow-[0_2px_8px_0_#00000040] lg:gap-[30px] sm:gap-[20px] w-full h-full">
+    <div className="flex flex-col lg:p-[40px] sm:p-[20px]  shadow-[0_2px_8px_0_#00000040] lg:gap-[30px] sm:gap-[20px] w-full h-full">
       <SectionTittle
         title="Thông tin:"
         textPosition="left"

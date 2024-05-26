@@ -3,6 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import ViewMoreButton from "../../../ViewMoreButton";
 import Link from "next/link";
 import moment from "moment";
+import "moment/locale/vi";
 
 function Card({
   _id,
@@ -30,7 +31,7 @@ function Card({
         <div className="w-[100%] sm:h-[33.34%] md:h-[50%] xl:h-[47.5%] sm:p-[10px_10px_20px_10px] md:p-[4px_4px_8px_4px] lg:p-[6px_6px_12px_6px] xl:p-[12px_12px_24px_12px] flex flex-col justify-between ">
           <div className="space-y-[8px]">
             <div className="flex space-x-[8px] items-center justify-between ">
-              <div className="text-black sm:text-[7px] lg:text-[10px]  ">
+              <div className="text-black sm:text-[8px] lg:text-[10px]  ">
                 {moment(new Date(postTime), "YYYYMMDD").fromNow()}
               </div>
             </div>
@@ -45,7 +46,7 @@ function Card({
             </div>
           </div>
 
-          <ViewMoreButton size="small" content={"View more"} />
+          <ViewMoreButton size="small" content={"Xem thêm"} />
         </div>
       </Link>
     </div>

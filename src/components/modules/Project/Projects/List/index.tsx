@@ -22,7 +22,7 @@ function List({ listProjects = initialListProjects }: any) {
 
   return (
     <div className="sm:space-y-[12px] md:space-y-[20px] xl:space-y-[24px] ">
-      <div className="w-[100%] flex sm:flex-col md:flex-row sm:gap-y-[20px] md:gap-y-[12px] lg:gap-y-[20px] xl:gap-y-[32px] justify-between flex-wrap ">
+      <div className="w-[100%] flex sm:flex-col md:flex-row sm:gap-[20px] md:gap-[12px] lg:gap-[20px] xl:gap-[32px] justify-start flex-wrap ">
         {listProjects?.map((items: any) => (
           <Card
             key={items?._id}

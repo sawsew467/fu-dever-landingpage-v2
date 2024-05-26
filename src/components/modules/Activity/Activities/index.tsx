@@ -3,11 +3,12 @@ import React from "react";
 import workshop from "@images/pages/activity/activities/workshop.jpg";
 import training from "@images/pages/activity/activities/training.jpg";
 import contest from "@images/pages/activity/activities/contest.jpg";
-import SectionTitle from "@components/core/common/SectionTitle";
-import Slider from "@components/modules/Activity/Slider";
-import Album from "../Album";
 
-function Activities({ data, album }: any) {
+import SectionTitle from "@components/core/common/SectionTitle";
+import Album from "../Album";
+import Slider from "../Slider";
+
+function Activities({ data, albums }: any) {
   const academicActivities = [
     {
       img: workshop,
@@ -58,32 +59,15 @@ function Activities({ data, album }: any) {
                     <p className="leading-[19px] lg:max-w-[310px] md:max-w-[188px] sm:w-full text-[16px] font-light text-center">
                       {activity.desc}
                     </p>
-                    {/* <button className=" flex gap-1 flex-row items-center lg:px-[32px] lg:py-2 md:px-[10px] md:py-1 px-[32px] py-2 bg-[#0098FF] rounded-[2px]">
-                      <p className="font-normal text-[16px] leading-[24px] text-white">
-                        View more
-                      </p>
-                      <Image loading="lazy" src={ArrowIcon} alt="arrowIcon"></Image>
-                    </button> */}
                   </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
+        <Slider images={data?.images} />
       </section>
-      <section className="w-full h-full flex flex-col justify-center items-center bg-[#fff]">
-        <div className="max-w-[1440px]   w-full h-full  flex flex-col justify-center items-center">
-          <div className=" flex flex-col w-full xl:px-[80px] md:px-[40px] sm:px-[20px] md:py-[60px] sm:py-[40px]">
-            <SectionTitle
-              title="NGOẠI KHÓA"
-              subtitle="Không ngừng kết nối, phát triển vững bềnh"
-              textPosition="left"
-            ></SectionTitle>
-            <Slider images={data?.images}></Slider>
-          </div>
-        </div>
-      </section>
-      {/* <Album albums={album} /> */}
+      <Album albums={albums} />
     </>
   );
 }

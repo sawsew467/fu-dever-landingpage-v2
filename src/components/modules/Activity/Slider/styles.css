@@ -1,15 +1,3 @@
-.rotateY180deg {
-    transform: rotateY(180deg) !important;
-}
-
-.image-gallery-image {
-    width: 100% !important;
-    object-fit: cover !important;
-    height: 100% !important;
-}
-
-.image-gallery-thumbnail-image {
-    object-fit: cover !important;
-    width: 90px !important;
-    height: 60px !important;
+.swiper-slide-thumb-active img {
+    filter: grayscale(0) !important;
 }
