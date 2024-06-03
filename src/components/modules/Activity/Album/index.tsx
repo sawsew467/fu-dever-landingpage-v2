@@ -56,7 +56,7 @@ const Album = ({ albums }: any) => {
                 <Link
                   href="album/{slug}"
                   as={`activity/${album?.slug}`}
-                  className="hover:underline hover:text-primary uppercase underline-offset-4 font-regular xl:text-[20px] lg:text-[16px] md:text-[16px] sm:text-[16px]"
+                  className="hover:underline hover:text-primary uppercase text-center underline-offset-4 font-regular xl:text-[20px] lg:text-[16px] md:text-[16px] sm:text-[16px]"
                 >
                   {album?.name}
                 </Link>

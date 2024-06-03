@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { AppProgressBar, useRouter } from "next-nprogress-bar";
 import "./style.css";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 const animationHeader: any = {
   down: {
     y: [-60, 0],
@@ -75,14 +76,14 @@ function Header() {
       <div
         className={`max-w-[1440px] mx-auto h-[56px] lg:h-[64px] xl:h-[64px] flex justify-between items-center px-[20px] md:px-[40px] lg:px-[40px] xl:px-[80px]`}
       >
-        <a href="/">
+        <Link href="/">
           <Image
             loading="lazy"
             src={Logo}
             alt="Picture of the author"
             className="w-auto h-auto"
           />
-        </a>
+        </Link>
         <div className={`hidden md:hidden lg:flex gap-[40px] text-[16px]`}>
           <button
             onClick={() => handleDirect("/")}

@@ -63,7 +63,7 @@ const Profile = ({ user }: { user: any }) => {
               width={30}
               height={30}
             ></Image>
-            <p className="xl:text-[20px] lg:text-[18px] md:text-[16px] sm:text-[14px] font-regular flex leading-none">
+            <p className="uppercase xl:text-[20px] lg:text-[18px] md:text-[16px] sm:text-[14px] font-regular flex leading-none">
               {user?.MSSV ?? "không có"}
             </p>
           </span>

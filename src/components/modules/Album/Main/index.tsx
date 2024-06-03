@@ -82,6 +82,8 @@ const MainAlbum = ({ album }: any) => {
                 alt={image?.url}
                 width={400}
                 height={400}
+                blurDataURL={image?.url}
+                placeholder="blur"
                 className=" w-full h-full lg:rounded-[16px] sm:rounded-[8px]"
               ></Image>
             </li>
