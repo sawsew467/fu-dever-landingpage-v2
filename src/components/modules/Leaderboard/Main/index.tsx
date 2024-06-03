@@ -75,7 +75,7 @@ function LeaderboardModule({ leaderboardData }: { leaderboardData: any }) {
                 className="rounded-2xl border-4 border-primary"
               />
               <span className="lg:w-16 lg:h-16 w-10 h-10 bg-primary flex justify-center items-center rounded-full lg:text-lg text-xs absolute left-1/2 lg:bottom-[-32px] bottom-[-20px] translate-x-[-50%]">
-                2
+                1
               </span>
             </div>
             <div className="flex flex-col items-center gap-1">

@@ -109,7 +109,7 @@ const ListMember = ({ member = initialData }: { member: any }) => {
                       </h4>
                       <div className=" h-[auto] xl:text-[14px]  lg:text-[12px] md:text-[8px] sm:text-[10px] xl:leading-[17px] lg:leading-[14.52px] md:leading-[9.6px] flex justify-between items-end ">
                         <div className="flex flex-col xl:gap-[8px] md:gap-[6px] sm:gap-[3px]">
-                          <p className="font-[500] text-[#fff]">
+                          <p className="uppercase font-[500] text-[#fff]">
                             {user?.MSSV && `-${user?.MSSV}`}
                           </p>
                           <p className="font-[500] text-[#fff]">

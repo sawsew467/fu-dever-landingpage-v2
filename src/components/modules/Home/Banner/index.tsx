@@ -83,11 +83,9 @@ function Banner() {
           >
             WORK HARD - PLAY HARD
           </h2>
-          <p className="text-center text-[#22181C] font-[400] w-[310px] lg:w-[724px] xl:w-[724px] text-[16px] lg:text-[20px] xl:text-[20px] leading-[18px] lg:leading-[23px] xl:leading-[23px] mt-[12px]">
-            Tham gia ngay câu lạc bộ của chúng tôi! <br></br>
-            Kết nối với cộng đồng đam mê công nghệ.<br></br>
-            Học hỏi không ngừng và khai phá tiềm năng. <br></br>
-            Dù bạn là ai, sẽ luôn luôn có điều mới để khám phá và chinh phục!.
+          <p className="text-center text-[#22181C] whitespace-nowrap font-[400] text-[16px] lg:text-[20px] xl:text-[20px] leading-[18px] lg:leading-[23px] xl:leading-[23px] mt-[12px]">
+            Hãy tham gia ngay câu lạc bộ dever của chúng tôi! <br></br>
+            Kết nối với cộng đồng đam mê công nghệ và nhiều hơn thế nữa.<br></br>
           </p>
           <button className="px-[24px] xl:px-[32px] py-[12px] xl:py-[16px] bg-[#0098FF] flex justify-center items-center mt-[20px]">
             <p className="font-[400] text-[12px] xl:text-[16px] text-white leading-[19px]">
