@@ -46,7 +46,7 @@ const ListMember = ({ member = initialData }: { member: any }) => {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: `${userEndpoint.GET_ALL_USERS}?page=${page}&limit=8`,
+      url: `${userEndpoint.GET_ALL_USERS}?page=${page}&limit=8&filter={"isLeader":false}`,
     };
 
     try {

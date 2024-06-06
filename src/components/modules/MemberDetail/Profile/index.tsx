@@ -50,9 +50,7 @@ const Profile = ({ user }: { user: any }) => {
               height={30}
             ></Image>
             <p className="xl:text-[20px] lg:text-[18px] md:text-[16px] sm:text-[14px] font-regular flex leading-none">
-              {user?.dob
-                ? moment(user?.dob)?.subtract(10, "days")?.calendar()
-                : "không có"}
+              {user?.dob ? moment().format("L") : "không có"}
             </p>
           </span>
           <span className="flex gap-[8px] items-center w-fit">
