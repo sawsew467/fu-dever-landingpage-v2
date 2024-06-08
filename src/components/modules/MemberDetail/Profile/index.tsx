@@ -27,7 +27,7 @@ const Profile = ({ user }: { user: any }) => {
           <h2 className="xl:text-[24px] lg:text-[20px] md:text-[18px] sm:text-[20px] text-[#0065A9] font-extrabold mb-[10px]">
             {user?.firstname || user?.lastname
               ? `${user?.firstname ?? ""} ${user?.lastname ?? ""}`
-              : "Chưa có tông tin tên"}
+              : "Chưa có tên"}
           </h2>
           <span className="flex gap-[8px] items-center w-fit">
             <Image
