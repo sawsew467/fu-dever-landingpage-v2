@@ -51,7 +51,7 @@ const getUser = async () => {
   let config = {
     method: "get",
     maxBodyLength: Infinity,
-    url: `${userEndpoint.GET_ALL_USERS}?page=1&limit=8&filter={"isLeader":  false}`,
+    url: `${userEndpoint.GET_ALL_USERS}?page=1&limit=8&filter={"isLeader":false}`,
   };
 
   try {

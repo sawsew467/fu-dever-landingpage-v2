@@ -42,7 +42,7 @@ const AboutMe = ({ user }: any) => {
             Vị trí:
           </h2>
           <p className="font-bold xl:text-[18px] lg:text-[16px] sm:text-[14px] text-[#0065A9]">
-            {user?.positionId?.name ?? "chưa có vị trí cụ thể"}
+            {user?.positionId?.name ?? "Chưa có vị trí cụ thể"}
           </p>
         </span>
         <span className="w-fit">
