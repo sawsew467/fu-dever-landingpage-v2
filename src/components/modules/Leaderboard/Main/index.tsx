@@ -30,7 +30,7 @@ function LeaderboardModule({ leaderboardData }: { leaderboardData: any }) {
                 alt=""
                 width={290}
                 height={400}
-                className="rounded-2xl border-4 border-primary"
+                className="rounded-2xl border-4 border-primary h-[400px] w-[290px object-cover"
               />
               <span className="lg:w-16 lg:h-16 w-10 h-10 bg-primary flex justify-center items-center rounded-full lg:text-lg text-xs absolute left-1/2 lg:bottom-[-32px] bottom-[-20px] translate-x-[-50%]">
                 2
