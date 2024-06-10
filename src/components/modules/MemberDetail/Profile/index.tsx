@@ -5,6 +5,7 @@ import dob from "@icons/pages/member/detail/cake.svg";
 import id_person from "@icons/pages/member/detail/id_person.svg";
 import moment from "moment";
 import Social from "../Social";
+import "moment/locale/vi";
 const decs = [
   { label: "Địa chỉ email:", dataIndex: "email" },
   { label: "Sinh sống:", dataIndex: "hometown" },

@@ -49,7 +49,6 @@ const AboutMe = ({ user }: any) => {
             {user?.school ?? "chưa có thông tin"}
           </p>
         </span>
-
         <span className="w-fit">
           <h2 className="font-regular xl:text-[20px] lg:text-[18px] md:text-[16px] sm:text-[14px]">
             Chuyên ngành:

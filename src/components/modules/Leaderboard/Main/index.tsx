@@ -68,7 +68,7 @@ function LeaderboardModule({ leaderboardData }: { leaderboardData: any }) {
               />
               <Image
                 loading="lazy"
-                src={user2?.userId?.avatar ?? avatar_default}
+                src={user1?.userId?.avatar ?? avatar_default}
                 alt=""
                 width={290}
                 height={400}
@@ -93,7 +93,7 @@ function LeaderboardModule({ leaderboardData }: { leaderboardData: any }) {
                   height={24}
                 />
                 <p className="lg:text-lg text-xs font-medium">
-                  {user2?.acSubmissionList?.length * 10 || 0} pts
+                  {user1?.acSubmissionList?.length * 10 || 0} pts
                 </p>
               </div>
             </div>
