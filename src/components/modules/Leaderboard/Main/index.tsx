@@ -3,11 +3,11 @@ import Image from "next/image";
 import leetcode from "@icons/pages/leaderBoard/leetcode.svg";
 import crown from "@icons/pages/leaderBoard/crown.svg";
 import avatar_default from "@images/pages/leaderBoard/avatar_default.png";
+import Link from "next/link";
 function LeaderboardModule({ leaderboardData }: { leaderboardData: any }) {
   const user1 = leaderboardData?.[0];
   const user2 = leaderboardData?.[1];
   const user3 = leaderboardData?.[2];
-
   return (
     <main className="min-h-[100vh] pt-14">
       <section className="flex flex-col items-center pt-14 pb-10">
@@ -136,33 +136,32 @@ function LeaderboardModule({ leaderboardData }: { leaderboardData: any }) {
       </section>
       <section className="max-w-[1440px] mx-auto w-full bg-[#F8FCFF] lg:px-20 px-5 py-10 flex flex-col gap-4">
         {leaderboardData?.map((user: any, index: number) => (
-          <div
-            className="cursor-pointer hover:bg-[#7dd6ff] transition-all w-full bg-white drop-shadow-md rounded-2xl lg:p-5 md:p-4 sm:p-3 flex items-center group "
-            key={index}
-          >
-            <span className="block lg:w-24 w-10 text-center text-xs lg:text-lg">
-              {index + 1}
-            </span>
-            <Image
-              loading="lazy"
-              src={user?.userId?.avatar ?? avatar_default}
-              alt=""
-              width={40}
-              height={40}
-              className="rounded-full w-10 h-10 object-cover mx-5"
-            />
-            <p className="text-xs lg:text-lg flex-1">
-              {user?.userId
-                ? user?.userId?.firstname + " " + user?.userId?.lastname
-                : "Không có thông tin"}
-            </p>
-            <span className="hidden w-48 text-center text-xs lg:text-lg md:block ">
-              {user?.leetcodeUsername}
-            </span>
-            <span className="block lg:w-24 w-20 text-center text-xs lg:text-lg">
-              {user?.acSubmissionList?.length * 10} pts
-            </span>
-          </div>
+          <Link href={`/member/${user.userId._id}`} key={index}>
+            <div className="cursor-pointer hover:bg-[#7dd6ff] transition-all w-full bg-white drop-shadow-md rounded-2xl lg:p-5 md:p-4 sm:p-3 flex items-center group ">
+              <span className="block lg:w-24 w-10 text-center text-xs lg:text-lg">
+                {index + 1}
+              </span>
+              <Image
+                loading="lazy"
+                src={user?.userId?.avatar ?? avatar_default}
+                alt=""
+                width={40}
+                height={40}
+                className="rounded-full w-10 h-10 object-cover mx-5"
+              />
+              <p className="text-xs lg:text-lg flex-1">
+                {user?.userId
+                  ? user?.userId?.firstname + " " + user?.userId?.lastname
+                  : "Không có thông tin"}
+              </p>
+              <span className="hidden w-48 text-center text-xs lg:text-lg md:block ">
+                {user?.leetcodeUsername}
+              </span>
+              <span className="block lg:w-24 w-20 text-center text-xs lg:text-lg">
+                {user?.acSubmissionList?.length * 10} pts
+              </span>
+            </div>
+          </Link>
         ))}
       </section>
     </main>
