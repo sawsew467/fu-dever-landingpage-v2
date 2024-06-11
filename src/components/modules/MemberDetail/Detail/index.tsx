@@ -58,7 +58,13 @@ const DetailMember = ({ user = initialUser }: any) => {
         <Link href="/member">
           <div className="hover:xl:pl-[50px] hover:lg:pl-[40px] hover:md:pl-[30px] hover:sm:pl-[20px] transition-all relative group xl:text-[40px] lg:text-[32px] md:text-[28px] sm:text-[20px] font-bold flex gap-[10px]">
             <span className="aspect-square xl:w-[50px] lg:w-[40px] md:w-[30px] sm:w-[20px] transition-all h-full flex justify-center items-center absolute opacity-0 left-10 rotate-[180deg] group-hover:left-0 group-hover:opacity-100">
-              <Image src={arrowRight} alt="icons" width={50} height={50} className="w-full h-full"/>
+              <Image
+                src={arrowRight}
+                alt="icons"
+                width={50}
+                height={50}
+                className="w-full h-full"
+              />
             </span>
             <p>Hồ sơ của</p>
             <h2 className="text-[#0098FF] ">
