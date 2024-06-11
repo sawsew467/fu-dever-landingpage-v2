@@ -51,4 +51,4 @@ async function Activity() {
 }
 
 export default Activity;
-export const revalidate = 60;
+export const revalidate = 20;
