@@ -9,7 +9,7 @@ import "moment/locale/vi";
 const decs = [
   { label: "Địa chỉ email:", dataIndex: "email" },
   { label: "Sinh sống:", dataIndex: "hometown" },
-  { label: "Số điện thoại:", dataIndex: "phone" },
+  // { label: "Số điện thoại:", dataIndex: "phone" },
 ];
 const Profile = ({ user }: { user: any }) => {
   return (
