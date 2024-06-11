@@ -34,4 +34,4 @@ export default async function Project() {
   const data: any = await getAllProject();
   return <MainProject data={data?.data?.data ?? []} />;
 }
-export const revalidate = 60;
+export const revalidate = 20;
