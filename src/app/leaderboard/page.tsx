@@ -20,7 +20,7 @@ const getLeaderboard = async () => {
   let config = {
     method: "get",
     maxBodyLength: Infinity,
-    url: "https://dever-dashboard-api.onrender.com/api/v1/leetcode",
+    url: "https://dever-dashboard-api-v2.onrender.com/api/v1/leetcode",
   };
 
   try {
